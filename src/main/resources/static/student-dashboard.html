@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="dashboard-header">
+
+    <div>
+        <h1>Course Prerequisite Planner</h1>
+        <p>Student Dashboard</p>
+    </div>
+
+    <button onclick="logout()" class="logout-button">
+        Logout
+    </button>
+
+</header>
+
+
+<div class="student-container">
+
+    <!-- Welcome -->
+
+    <section class="welcome-card">
+
+        <h2>
+            Welcome, <span id="studentName">Student</span>! 👋
+        </h2>
+
+        <p>
+            Plan your courses and check your prerequisite eligibility.
+        </p>
+
+    </section>
+
+
+    <!-- Dashboard Cards -->
+
+    <section class="dashboard">
+
+        <div class="summary-card">
+
+            <h3>📚 Courses</h3>
+
+            <p>
+                View all available courses.
+            </p>
+
+            <button onclick="loadCourses()">
+                View Courses
+            </button>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h3>🛣️ Learning Path</h3>
+
+            <p>
+                Generate your recommended learning path.
+            </p>
+
+            <button onclick="showLearningPathSection()">
+                Generate Path
+            </button>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h3>🎯 Eligibility</h3>
+
+            <p>
+                Check whether you can take a course.
+            </p>
+
+            <button onclick="showEligibilitySection()">
+                Check Eligibility
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Courses -->
+
+    <section class="card">
+
+        <h2>Available Courses</h2>
+
+        <div id="courseList">
+            <p>
+                Click "View Courses" to load available courses.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="card">
+
+    <h2>🔗 Prerequisite Management</h2>
+
+    <p>
+        Add or view prerequisite relationships between courses.
+    </p>
+
+    <br>
+
+    <input
+        type="number"
+        id="prerequisiteCourseId"
+        placeholder="Course ID"
+    >
+
+    <input
+        type="number"
+        id="prerequisiteId"
+        placeholder="Prerequisite Course ID"
+    >
+
+    <button onclick="addPrerequisite()">
+        Add Prerequisite
+    </button>
+
+    <button onclick="viewPrerequisites()">
+        View Prerequisites
+    </button>
+
+    <div id="prerequisiteResult"></div>
+
+</section>
+
+    <!-- Learning Path -->
+
+    <section class="card" id="learningPathSection">
+
+        <h2>Generate Learning Path</h2>
+
+        <input
+            type="number"
+            id="pathCourseId"
+            placeholder="Enter target course ID"
+        >
+
+        <button onclick="getStudentLearningPath()">
+            Generate Learning Path
+        </button>
+
+        <div id="learningPathResult"></div>
+
+    </section>
+
+
+    <!-- Eligibility -->
+
+    <section class="card" id="eligibilitySection">
+
+        <h2>Check Course Eligibility</h2>
+
+        <input
+            type="number"
+            id="eligibilityCourseId"
+            placeholder="Target course ID"
+        >
+
+        <input
+            type="text"
+            id="completedCourses"
+            placeholder="Completed IDs e.g. 1,2,3"
+        >
+
+        <button onclick="checkStudentEligibility()">
+            Check Eligibility
+        </button>
+
+        <div id="eligibilityResult"></div>
+
+    </section>
+
+</div>
+
+
+<script src="student-dashboard.js"></script>
+
+</body>
+
+</html>

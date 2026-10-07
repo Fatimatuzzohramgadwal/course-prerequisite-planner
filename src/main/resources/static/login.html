@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Login - Course Prerequisite Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Course Prerequisite Planner</h1>
+    <p>Student Portal</p>
+</header>
+
+<div class="auth-container">
+
+    <!-- LOGIN -->
+
+    <div class="auth-card" id="loginCard">
+
+        <h2>Student Login</h2>
+
+        <p class="auth-subtitle">
+            Login to access your learning dashboard
+        </p>
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email Address"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button onclick="loginStudent()">
+            Login
+        </button>
+
+        <p id="loginMessage"></p>
+
+        <p class="switch-text">
+            Don't have an account?
+            <button class="link-button" onclick="showRegister()">
+                Register
+            </button>
+        </p>
+
+    </div>
+
+
+    <!-- REGISTER -->
+
+    <div class="auth-card" id="registerCard" style="display: none;">
+
+        <h2>Student Registration</h2>
+
+        <p class="auth-subtitle">
+            Create your student account
+        </p>
+
+        <input
+            type="text"
+            id="registerName"
+            placeholder="Full Name"
+        >
+
+        <input
+            type="email"
+            id="registerEmail"
+            placeholder="Email Address"
+        >
+
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+        >
+
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+        >
+
+        <button onclick="registerStudent()">
+            Register
+        </button>
+
+        <p id="registerMessage"></p>
+
+        <p class="switch-text">
+            Already have an account?
+            <button class="link-button" onclick="showLogin()">
+                Login
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>
